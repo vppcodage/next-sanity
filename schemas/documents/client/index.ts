@@ -1,3 +1,5 @@
+import { SchemaTypeDefinition } from "sanity";
+
 export default {
   name: 'client',
   title: 'Client',
@@ -26,7 +28,21 @@ export default {
   ],
   preview: {
     select: {
-      title: 'clientName',
+      title: "clientName",
+      image: "clientImage.image",
+    },
+    prepare(select) {
+      const { title, image } = select;
+      if (!title) {
+        return {
+          title: "Client",
+          media: image && image,
+        };
+      }
+      return {
+        title: title,
+        media: image && image,
+      };
     },
   },
-}
+} as SchemaTypeDefinition

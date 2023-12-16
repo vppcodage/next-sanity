@@ -25,6 +25,10 @@ import { IoBook } from "react-icons/io5";
 import { TbKeyframesFilled } from "react-icons/tb";
 import { LuPackage } from "react-icons/lu";
 import { MdOutlineCases } from "react-icons/md";
+import { SiAuthelia } from "react-icons/si";
+import { TbCategory } from "react-icons/tb";
+import { MdOutlineContentCopy } from "react-icons/md";
+import { BsFillSignIntersectionFill } from "react-icons/bs";
 const singleton_pages = [
   OLD_PAGE_ID_LIST["blog_page"],
   OLD_PAGE_ID_LIST["book_consultation_page"],
@@ -60,21 +64,25 @@ export const deskStructure: StructureResolver = (S) =>
                 S,
                 type: "author_section",
                 title: "Author",
+                icon: SiAuthelia,
               }),
               structureListType({
                 S,
                 title: "Blog Detail Side Content",
                 type: "blog_detail_side_content",
+                icon: MdOutlineContentCopy,
               }),
               structureListType({
                 S,
                 title: "Category",
                 type: "category",
+                icon: TbCategory,
               }),
               structureListType({
                 S,
                 title: "Compare Frameworks Section",
                 type: "compare_frameworks_section",
+                icon: BsFillSignIntersectionFill,
               }),
             ])
         ),

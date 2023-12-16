@@ -1,3 +1,5 @@
+import { SchemaTypeDefinition } from "sanity";
+
 export default {
   name: 'blog_detail_page',
   title: 'Blog Detail Page',
@@ -143,4 +145,23 @@ export default {
       group: 'sidebar',
     },
   ],
-}
+  preview: {
+    select: {
+      title: "title",
+      image: "hero_image.image",
+    },
+    prepare(select) {
+      const { title, image } = select;
+      if (!title) {
+        return {
+          title: "Blog Detail",
+          media: image && image,
+        };
+      }
+      return {
+        title: title,
+        media: image && image,
+      };
+    },
+  },
+} as SchemaTypeDefinition

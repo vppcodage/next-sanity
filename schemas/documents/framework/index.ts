@@ -45,4 +45,23 @@ export default {
       of: [{type: 'string'}],
     },
   ],
-}as SchemaTypeDefinition
+  preview: {
+    select: {
+      title: "name",
+      image: "image.image",
+    },
+    prepare(select) {
+      const { title, image } = select;
+      if (!title) {
+        return {
+          title: "Framework",
+          media: image && image,
+        };
+      }
+      return {
+        title: title,
+        media: image && image,
+      };
+    },
+  },
+} as SchemaTypeDefinition

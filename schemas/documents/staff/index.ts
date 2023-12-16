@@ -1,3 +1,5 @@
+import { SchemaTypeDefinition } from "sanity";
+
 export default {
   name: 'staff',
   title: 'Staff',
@@ -30,10 +32,22 @@ export default {
     },
   ],
   preview: {
-    prepare: () => {
-      return {
-        title: 'Staff',
+    select: {
+      title: "staff_name",
+      image: "staff_image.image",
+    },
+    prepare(select) {
+      const { title, image } = select;
+      if (!title) {
+        return {
+          title: "Staff",
+          media: image && image,
+        };
       }
+      return {
+        title: title,
+        media: image && image,
+      };
     },
   },
-}
+} as SchemaTypeDefinition
