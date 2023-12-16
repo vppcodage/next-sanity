@@ -10,7 +10,6 @@ import {
 } from "react-icons/hi";
 import {
   RiPagesLine,
-  RiGroupLine,
   RiPagesFill,
 } from "react-icons/ri";
 import { SiMicrodotblog } from "react-icons/si";
@@ -23,7 +22,6 @@ import { FaHome } from "react-icons/fa";
 import { FaCodeCompare } from "react-icons/fa6";
 import { TbListDetails } from "react-icons/tb";
 import { IoBook } from "react-icons/io5";
-import { SiStudyverse } from "react-icons/si";
 import { TbKeyframesFilled } from "react-icons/tb";
 import { LuPackage } from "react-icons/lu";
 import { MdOutlineCases } from "react-icons/md";
