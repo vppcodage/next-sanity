@@ -1,4 +1,4 @@
-import { StructureResolver } from "sanity/desk";
+import { MenuItem, MenuItemBuilder, StructureResolver } from "sanity/desk";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { structureListType } from "./helper/structure-list-type";
 import {
@@ -8,12 +8,15 @@ import {
   HiOutlineDocumentSearch,
   HiOutlineTerminal,
 } from "react-icons/hi";
-import { RiPagesLine, RiGroupLine, RiFunctionFill, RiPagesFill } from "react-icons/ri";
+import {
+  RiPagesLine,
+  RiGroupLine,
+  RiPagesFill,
+} from "react-icons/ri";
 import { SiMicrodotblog } from "react-icons/si";
 import { BsFileEarmarkCodeFill } from "react-icons/bs";
 
 import { FaRocketchat } from "react-icons/fa";
-import { InitialValueTemplates } from "./initialValueTemplates";
 import { OLD_PAGE_ID_LIST } from "./helper/defaults";
 const singleton_pages = [
   OLD_PAGE_ID_LIST["blog_page"],
@@ -80,33 +83,33 @@ export const deskStructure: StructureResolver = (S) =>
                 .title("Home Page")
                 .icon(RiGroupLine)
                 .schemaType("home"),
-                S.documentListItem()
+              S.documentListItem()
                 .title("Case Study Index")
                 .icon(RiGroupLine)
                 .schemaType("case_study_page"),
-                S.documentListItem()
+              S.documentListItem()
                 .icon(RiGroupLine)
                 .title("Comparision Main Page")
                 .schemaType("comparision_main_page"),
-                S.documentListItem()
+              S.documentListItem()
                 .icon(RiGroupLine)
                 .title("Blog Index")
                 .schemaType("blog_page"),
-                S.documentListItem()
+              S.documentListItem()
                 .icon(RiGroupLine)
                 .title("Comparision Details")
                 .schemaType("comparision_details_page"),
-                S.documentListItem()
+              S.documentListItem()
                 .icon(RiGroupLine)
                 .title("404")
                 .schemaType("all_page"),
-                S.documentListItem()
+              S.documentListItem()
                 .icon(RiGroupLine)
                 .title("Book Consultation Page")
-                .schemaType("book_consultation_page")
+                .schemaType("book_consultation_page"),
             ])
         ),
-        S.listItem()
+      S.listItem()
         .title("Site Pages (Custom)")
         .icon(RiPagesFill)
         .child(
@@ -116,20 +119,23 @@ export const deskStructure: StructureResolver = (S) =>
                 ?.map((i) => `"${i}"`)
                 .join(",")}])`
             )
-            .title("Site Pages (Custom)").menuItems([
-              ...S.documentTypeList("all_page").getMenuItems(),
+            .title("Site Pages (Custom)")
+            .menuItems([
+              ...(S.documentTypeList("all_page").getMenuItems() as (
+                | MenuItem
+                | MenuItemBuilder
+              )[]),
               S.orderingMenuItem({
                 title: "Publishing date new->old",
                 by: [{ field: "_createdAt", direction: "desc" }],
-                name: ""
+                name: "",
               }),
               S.orderingMenuItem({
                 title: "Publishing date old->new",
                 by: [{ field: "_createdAt", direction: "asc" }],
-                name: ""
+                name: "",
               }),
             ])
-            
         ),
       S.divider(),
       structureListType({

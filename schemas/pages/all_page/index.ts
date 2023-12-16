@@ -1,5 +1,3 @@
-import { modes } from "../../../lib/constant/select-options";
-
 export default {
   name: "all_page",
   title: "All Page",

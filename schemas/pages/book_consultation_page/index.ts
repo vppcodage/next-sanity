@@ -1,5 +1,3 @@
-import { modes } from "../../../lib/constant/select-options";
-
 export default {
   name: "book_consultation_page",
   title: "Book Consultation Page",
