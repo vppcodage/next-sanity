@@ -27,6 +27,7 @@ export default {
       if (!title) {
         return {
           title: 'All Customer Reviews',
+          media: imageUrl && imageUrl,
         }
       }
       const headingText = toPlainText(title)
