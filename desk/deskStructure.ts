@@ -18,6 +18,15 @@ import { BsFileEarmarkCodeFill } from "react-icons/bs";
 
 import { FaRocketchat } from "react-icons/fa";
 import { OLD_PAGE_ID_LIST } from "./helper/defaults";
+import { GoAlert } from "react-icons/go";
+import { FaHome } from "react-icons/fa";
+import { FaCodeCompare } from "react-icons/fa6";
+import { TbListDetails } from "react-icons/tb";
+import { IoBook } from "react-icons/io5";
+import { SiStudyverse } from "react-icons/si";
+import { TbKeyframesFilled } from "react-icons/tb";
+import { LuPackage } from "react-icons/lu";
+import { MdOutlineCases } from "react-icons/md";
 const singleton_pages = [
   OLD_PAGE_ID_LIST["blog_page"],
   OLD_PAGE_ID_LIST["book_consultation_page"],
@@ -81,30 +90,30 @@ export const deskStructure: StructureResolver = (S) =>
             .items([
               S.documentListItem()
                 .title("Home Page")
-                .icon(RiGroupLine)
+                .icon(FaHome)
                 .schemaType("home"),
               S.documentListItem()
                 .title("Case Study Index")
-                .icon(RiGroupLine)
+                .icon(MdOutlineCases)
                 .schemaType("case_study_page"),
               S.documentListItem()
-                .icon(RiGroupLine)
+                .icon(FaCodeCompare)
                 .title("Comparision Main Page")
                 .schemaType("comparision_main_page"),
               S.documentListItem()
-                .icon(RiGroupLine)
+                .icon(SiMicrodotblog)
                 .title("Blog Index")
                 .schemaType("blog_page"),
               S.documentListItem()
-                .icon(RiGroupLine)
+                .icon(TbListDetails)
                 .title("Comparision Details")
                 .schemaType("comparision_details_page"),
               S.documentListItem()
-                .icon(RiGroupLine)
+                .icon(GoAlert)
                 .title("404")
                 .schemaType("all_page"),
               S.documentListItem()
-                .icon(RiGroupLine)
+                .icon(IoBook)
                 .title("Book Consultation Page")
                 .schemaType("book_consultation_page"),
             ])
@@ -155,7 +164,7 @@ export const deskStructure: StructureResolver = (S) =>
         S,
         type: "framework",
         title: "Frameworks",
-        icon: BsFileEarmarkCodeFill,
+        icon: TbKeyframesFilled,
       }),
       structureListType({
         S,
@@ -203,5 +212,6 @@ export const deskStructure: StructureResolver = (S) =>
         S,
         type: "package",
         title: "Packages",
+        icon: LuPackage,
       }),
     ]);
