@@ -1,8 +1,6 @@
-import { modes } from "../../../lib/constant/select-options";
-
 export default {
-  name: "home",
-  title: "Home",
+  name: "hireDedicatedPage",
+  title: "Hire Dedicated Page",
   type: "document",
   groups: [
     {
@@ -47,16 +45,16 @@ export default {
       title: "Section",
       type: "array",
       of: [
-        { type: "home_hero_section" },
-        { type: "featurd_case_study" },
-        { type: "section_course_title" },
-        { type: "price_section_document" },
-        { type: "case_study" },
-        { type: "blog_title_section" },
-        { type: "testimonials_section" },
-        { type: "comparision_frameworks" },
-        { type: "title_image_array_section" },
-        { type: "customer_reviews" },
+        { type: "image_title_description_array_section" },
+        { type: "jamstack_development" },
+        { type: "technology_section" },
+        { type: "price_section" },
+        { type: "hourly_developer" },
+        { type: "news_letter_section_document" },
+        { type: "choose_jamstacky_section" },
+        { type: "hiring_model_section" },
+        { type: "f_and_q_section" },
+        { type: "case_studies_client_section" },
       ],
       group: "main",
     },
@@ -66,14 +64,6 @@ export default {
       type: "reference",
       to: [{ type: "footer" }],
       group: "main",
-    },
-    {
-      name: "section_theme",
-      title: "Section Theme",
-      initialValue: "bg-white",
-      type: "string",
-      group: "main",
-      options: { list: modes, direction: "horizontal", layout: "radio" },
     },
     {
       name: "seo",

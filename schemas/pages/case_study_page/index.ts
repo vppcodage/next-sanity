@@ -1,8 +1,8 @@
 import { modes } from "../../../lib/constant/select-options";
 
 export default {
-  name: "home",
-  title: "Home",
+  name: "case_study_page",
+  title: "CaseStudyPage",
   type: "document",
   groups: [
     {
@@ -47,16 +47,9 @@ export default {
       title: "Section",
       type: "array",
       of: [
-        { type: "home_hero_section" },
-        { type: "featurd_case_study" },
-        { type: "section_course_title" },
-        { type: "price_section_document" },
-        { type: "case_study" },
-        { type: "blog_title_section" },
-        { type: "testimonials_section" },
-        { type: "comparision_frameworks" },
-        { type: "title_image_array_section" },
-        { type: "customer_reviews" },
+        { type: "hero_section_case_study_d_page" },
+        { type: "casestudy_bestwork_section" },
+        { type: "title_description_side_image_Section" },
       ],
       group: "main",
     },

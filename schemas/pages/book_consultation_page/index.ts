@@ -1,8 +1,8 @@
 import { modes } from "../../../lib/constant/select-options";
 
 export default {
-  name: "home",
-  title: "Home",
+  name: "book_consultation_page",
+  title: "Book Consultation Page",
   type: "document",
   groups: [
     {
@@ -47,16 +47,8 @@ export default {
       title: "Section",
       type: "array",
       of: [
-        { type: "home_hero_section" },
-        { type: "featurd_case_study" },
-        { type: "section_course_title" },
-        { type: "price_section_document" },
-        { type: "case_study" },
-        { type: "blog_title_section" },
-        { type: "testimonials_section" },
-        { type: "comparision_frameworks" },
-        { type: "title_image_array_section" },
-        { type: "customer_reviews" },
+        { type: "book_consultation" },
+        { type: "book_consultation_hero_section" },
       ],
       group: "main",
     },
@@ -66,14 +58,6 @@ export default {
       type: "reference",
       to: [{ type: "footer" }],
       group: "main",
-    },
-    {
-      name: "section_theme",
-      title: "Section Theme",
-      initialValue: "bg-white",
-      type: "string",
-      group: "main",
-      options: { list: modes, direction: "horizontal", layout: "radio" },
     },
     {
       name: "seo",

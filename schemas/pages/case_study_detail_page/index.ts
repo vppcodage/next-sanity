@@ -59,7 +59,8 @@ export default {
       group: 'main',
     },
     {
-      name: 'content',
+      name:'Section',
+      title:'Section',
       type: 'array',
       of: [
         {type: 'hero_section_case_study_d_page'},
