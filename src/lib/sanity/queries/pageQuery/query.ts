@@ -32,7 +32,7 @@ import {
 import { footer, header, pageBuilder, seo } from "../helperQueries";
 import { imageFields } from "../helper/imageFields";
 
-const groqQuery = groq`*[_type == "page" && slug.current==$slug]{
+const groqQuery = groq`*[_type == "all_page" && slug.current==$slug]{
   _type,
   "slug": slug.current,
   ${header},
