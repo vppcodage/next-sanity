@@ -25,7 +25,7 @@ const groqQuery = groq`*[_type == "blog_detail_page" && slug.current == $slug] |
   slug
   },
   "join_our_news_letter":contant[0].content[0],
-  "sideContentTitle" : content.custom_rich_text["section-heading"==@.style].children[].text,
+  "sideContentTitle" : content.custom_rich_text["title_content"==@._type].title,
   "blog_detail_post_Card":*[_type=="blog_detail_page" && defined(slug.current) && slug.current != ^.slug.current] | order(_createdAt desc)[0..2]{
   _type,
   banner_title,
