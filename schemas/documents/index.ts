@@ -22,6 +22,7 @@ import _package from "./plan/package"
 import plan_services_template from "./plan/plan_services_template"
 import price_section from "./price_section"
 import section_sidebar from "./section_sidebar"
+import setting from "./setting"
 import staff from "./staff"
 import testimonial from "./testimonial"
 
@@ -53,6 +54,7 @@ export const documentsTypes = [
   category,
   framework,
   comparisionTemplate,
+  setting,
   blog_detail_side_content
 ]
 export default documentsTypes

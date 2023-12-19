@@ -8,10 +8,7 @@ import {
   HiOutlineDocumentSearch,
   HiOutlineTerminal,
 } from "react-icons/hi";
-import {
-  RiPagesLine,
-  RiPagesFill,
-} from "react-icons/ri";
+import { RiPagesLine, RiPagesFill } from "react-icons/ri";
 import { SiMicrodotblog } from "react-icons/si";
 import { BsFileEarmarkCodeFill } from "react-icons/bs";
 
@@ -29,6 +26,7 @@ import { SiAuthelia } from "react-icons/si";
 import { TbCategory } from "react-icons/tb";
 import { MdOutlineContentCopy } from "react-icons/md";
 import { BsFillSignIntersectionFill } from "react-icons/bs";
+import { InitialValueTemplates } from "./initialValueTemplates";
 const singleton_pages = [
   OLD_PAGE_ID_LIST["blog_page"],
   OLD_PAGE_ID_LIST["book_consultation_page"],
@@ -86,6 +84,12 @@ export const deskStructure: StructureResolver = (S) =>
               }),
             ])
         ),
+      S.divider(),
+      S.documentListItem()
+        .title("setting")
+        .id(InitialValueTemplates.SETTING)
+        .schemaType("setting")
+        .icon(RiPagesLine),
       S.divider(),
       S.listItem()
         .title("Site Pages (Unique)")

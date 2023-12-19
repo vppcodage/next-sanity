@@ -26,6 +26,7 @@ export const InitialValueTemplates = {
   CLIENT: getPageId("client"),
   STAFF: getPageId("staff"),
   PACKAGE: getPageId("package"),
+  SETTING: getPageId("setting"),
   PLAN: getPageId("plan"),
   HIRING_REQUEST: getPageId("hiring_request"),
   MESSAGE_SEND_REQUEST: getPageId("message_send_request"),

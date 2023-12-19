@@ -87,4 +87,37 @@ export default {
       group: "seo",
     },
   ],
-};
+  preview: {
+    select: {
+      title: "title",
+      image: "feature_images",
+    },
+    prepare(select) {
+      const { title, image } = select;
+      
+      if (!title) {
+        return {
+          title: "Case Study Detail",
+          media: image && image[0].image,
+        };
+      }
+      return {
+        title: title,
+        media: image && image[0].image,
+      };
+    },
+  }
+  } as SchemaTypeDefinition
+
+
+
+
+
+
+
+
+
+
+
+
+

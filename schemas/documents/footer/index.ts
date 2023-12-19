@@ -59,5 +59,15 @@ export default {
       title: 'Top Link',
       type: 'string',
     },
+    {
+      name: 'whatsapp_number',
+      title: 'Whatsapp Number',
+      type: 'string',
+    },
+    {
+      name: 'telegram_userName',
+      title: 'Telegram UserName',
+      type: 'string',
+    },
   ],
 }
