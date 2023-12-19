@@ -2,7 +2,7 @@ import React from "react";
 import { GetStaticProps, NextPage } from "next";
 import { SharedPageProps } from "@/lib/sanity/types";
 import PreviewBlogListingView from "@/views/PreviewBlogListingView";
-import { fetchDataFromSanity, readToken } from "@/lib/sanity";
+import { fetchDataFromSanity, pageQuery, readToken } from "@/lib/sanity";
 import { filterSanityDataToSingleItem } from "@/lib/sanity/utils/filterSanityDataToSingleItem";
 import { blogListingPageQuery } from "@/lib/sanity/queries/blogListingPageQuery";
 import { BlogListing } from "@/lib/sanity/types/blog";
@@ -14,9 +14,9 @@ export interface PageProps extends SharedPageProps {
 }
 const BlogListingPage: NextPage<PageProps> = ({ page, draftMode }) => {
   if (draftMode) {
-    return <PreviewBlogListingView page={page} preview={draftMode} slug="/blog"/>;
+    return <PreviewBlogListingView page={page} preview={draftMode} />;
   }
-  return <BlogListingView page={page} slug="/blog" />;
+  return <BlogListingView page={page} />;
 };
 export default BlogListingPage;
 export const getStaticProps: GetStaticProps<PageProps> = async ({

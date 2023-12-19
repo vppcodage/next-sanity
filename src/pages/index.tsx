@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from "next";
 import React from "react";
 
-import { fetchDataFromSanity, readToken } from "@/lib/sanity";
+import { fetchDataFromSanity, pageQuery, readToken } from "@/lib/sanity";
 import { Page } from "@/lib/sanity/types/page";
 import { homePageQuery } from "@/lib/sanity/queries/homePageQuery";
 import { filterSanityDataToSingleItem } from "@/lib/sanity/utils/filterSanityDataToSingleItem";

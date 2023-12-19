@@ -1,21 +1,24 @@
 import React from "react";
 import { GetStaticProps, NextPage } from "next";
 import { SharedPageProps } from "@/lib/sanity/types";
-import { fetchDataFromSanity, readToken } from "@/lib/sanity";
+import { fetchDataFromSanity, pageQuery, readToken } from "@/lib/sanity";
 import { filterSanityDataToSingleItem } from "@/lib/sanity/utils/filterSanityDataToSingleItem";
 import PreviewComparisionListingView from "@/views/PreviewComparisionListingView";
 import ComparisionListingView from "@/views/ComparisionListingView";
 import { ComparisionListingType } from "@/lib/sanity/types";
 import { comparisionListingPageQuery } from "@/lib/sanity/queries/comparisionListingPageQuery";
+import { Page } from "@/lib/sanity/types/page";
+import PreviewPageView from "@/views/PreviewPageView";
+import PageView from "@/views/PageView";
 
 export interface PageProps extends SharedPageProps {
   page: ComparisionListingType;
 }
 const ComparisionListingPage: NextPage<PageProps> = ({ page, draftMode }) => {
   if (draftMode) {
-    return <PreviewComparisionListingView page={page} preview={draftMode} slug="/comparision"/>;
+    return <PreviewComparisionListingView page={page} preview={draftMode} />;
   }
-  return <ComparisionListingView page={page} slug="/comparision"/>;
+  return <ComparisionListingView page={page} />;
 };
 export default ComparisionListingPage;
 export const getStaticProps: GetStaticProps<PageProps> = async ({

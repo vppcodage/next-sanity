@@ -655,7 +655,7 @@ slug,
 feature_images[]{
 ${imageFields}
 },
-"heroSectionPreview" : content[_type=="hero_section_case_study_d_page"][0]{
+"heroSectionPreview" : Section[_type=="hero_section_case_study_d_page"][0]{
 description,
 section_title,
 title

@@ -28,7 +28,7 @@ const groqQuery = groq`*[_type == "case_study_detail_page" && slug.current == $s
   ${header},
   ${footer},
   ${seo},
-  "section" : content[]{
+  "section" : Section[]{
     (_type == "hero_section_case_study_d_page") => {
         ${heroSectionCaseStudyDPAGEFields}
     },

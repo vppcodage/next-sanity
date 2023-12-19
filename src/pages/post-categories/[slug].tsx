@@ -7,13 +7,13 @@ import { fetchDataFromSanity } from "@/lib/sanity";
 import { filterSanityDataToSingleItem } from "@/lib/sanity/utils/filterSanityDataToSingleItem";
 import { PostCategoriesListingPageQuery } from "@/lib/sanity/queries/postCategoriesListingPageQuery";
 import PostCategoriesPageView from "@/views/PostCategoriesListingView";
+import PreviewPostCategoriesPageView from "@/views/PreviewPostCategoriesListing";
 import { AllBlogsData, PostCategoriesListing } from "@/lib/sanity/types/blog";
 import { replace } from "@/lib/replace";
 
 interface PostCategoriesPageProps extends SharedPageProps {
   page: PostCategoriesListing;
   allBlogs: AllBlogsData;
-  slug: string;
 }
 
 interface Query {
@@ -24,18 +24,11 @@ const PostCategoriesPage: NextPage<PostCategoriesPageProps> = ({
   page,
   draftMode,
   allBlogs,
-  slug,
 }) => {
   // if (draftMode) {
   //   return <PreviewPostCategoriesPageView allBlogs={allBlogs} page={page} preview={draftMode} />;
   // }
-  return (
-    <PostCategoriesPageView
-      allBlogs={allBlogs}
-      page={page}
-      slug={`/post-categories/${slug}`}
-    />
-  );
+  return <PostCategoriesPageView allBlogs={allBlogs} page={page} />;
 };
 
 export const getStaticProps: GetStaticProps<
@@ -96,7 +89,6 @@ export const getStaticProps: GetStaticProps<
   return {
     props: {
       page: seoAugmentedData,
-      slug: params?.slug,
       allBlogs: allBlogsFilteredData,
       draftMode,
       token: draftMode ? readToken : "",

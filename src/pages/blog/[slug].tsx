@@ -12,7 +12,6 @@ import PreviewBlogDetailPageView from "@/views/PreviewBlogDetailPageView";
 
 interface BlogDetailPageProps extends SharedPageProps {
   page: BlogDetailPageType;
-  slug? : string
 }
 
 interface Query {
@@ -22,18 +21,17 @@ interface Query {
 const CaseStudyDetailPage: NextPage<BlogDetailPageProps> = ({
   page,
   draftMode,
-  slug
 }) => {
   if (draftMode) {
     return (
       <ModalsProvider>
-        <PreviewBlogDetailPageView page={page} preview={draftMode} slug={slug}/>
+        <PreviewBlogDetailPageView page={page} preview={draftMode} />
       </ModalsProvider>
     );
   }
   return (
     <ModalsProvider>
-      <BlogDetailPageView page={page} slug={slug}/>
+      <BlogDetailPageView page={page} />
     </ModalsProvider>
   );
 };
@@ -65,7 +63,6 @@ export const getStaticProps: GetStaticProps<
       page: pageFilteredData,
       draftMode,
       token: draftMode ? readToken : "",
-      slug : params.slug
     },
   };
 };

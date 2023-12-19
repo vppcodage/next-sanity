@@ -13,7 +13,7 @@ const groqQuery = groq`*[_type == 'book_consultation_page' && defined(slug.curre
     ${header},
     ${footer},
     ${seo},
-    "section": sections[]{
+    "section": section[]{
     (_type == "book_consultation_hero_section") => {
     ${bookConsultationHeroSectionFields},
     },

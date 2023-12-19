@@ -13,22 +13,21 @@ import PageView from "@/views/PageView";
 import { Page } from "@/lib/sanity/types/page";
 
 export interface PageProps extends SharedPageProps {
-  page: Page;
+  page: BookConsultationListing;
 }
 const BookConsultationPage: NextPage<PageProps> = ({ page, draftMode }) => {
 
   if (draftMode) {
-    return <PreviewPageView page={page} preview={draftMode} />;
+    return <PreviewBookConsultationListingView page={page} preview={draftMode} />;
   }
-  return <PageView page={page} />;
+  return <BookConsultationPageView page={page} />;
 };
 export default BookConsultationPage;
 export const getStaticProps: GetStaticProps<PageProps> = async ({
   draftMode = false,
 }) => {
-  const pageData = await fetchDataFromSanity<Page[]>({
-    query: pageQuery.query,
-    queryParams: { slug: 'book-consultation' }
+  const pageData = await fetchDataFromSanity<BookConsultationListing[]>({
+    query: bookConsultationQuery.query,
   });
   const page = filterSanityDataToSingleItem({
     data: pageData,

@@ -27,6 +27,9 @@ export const getServerSideProps: GetServerSideProps<PageProps, Query> = async (
   ctx: GetServerSidePropsContext
 ) => {
   const { draftMode = false, params } = ctx;
+  if (params?.slug === "404") {
+    return { notFound: true };
+  }
   const [pageData = []] = await Promise?.all([
     fetchDataFromSanity<PageType[]>({
       query: pageQuery?.query,

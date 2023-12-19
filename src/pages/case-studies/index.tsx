@@ -1,13 +1,14 @@
 import React from "react";
 import { GetStaticProps, NextPage } from "next";
 import { SharedPageProps } from "@/lib/sanity/types";
-// import PreviewCaseStudyListingView from "@/views/PreviewCaseStudyListingView";
-import { fetchDataFromSanity, readToken } from "@/lib/sanity";
+import PreviewCaseStudyListingView from "@/views/PreviewCaseStudyListingView";
+import { fetchDataFromSanity, pageQuery, readToken } from "@/lib/sanity";
 import { caseStudyListingPageQuery } from "@/lib/sanity/queries/caseStudyListingPageQuery";
 import { filterSanityDataToSingleItem } from "@/lib/sanity/utils/filterSanityDataToSingleItem";
-// import CaseStudyListingView from "@/views/CaseStudyListingView";
+import CaseStudyListingView from "@/views/CaseStudyListingView";
 import { CaseStudyListing } from "@/lib/sanity/types/caseStudy";
 import PageView from "@/views/PageView";
+import { Page } from "@/lib/sanity/types/page";
 import PreviewPageView from "@/views/PreviewPageView";
 
 export interface PageProps extends SharedPageProps {
@@ -15,9 +16,9 @@ export interface PageProps extends SharedPageProps {
 }
 const CaseStudyPage: NextPage<PageProps> = ({ page, draftMode }) => {
   if (draftMode) {
-    return <PreviewPageView page={page} preview={draftMode} />;
+    return <PreviewCaseStudyListingView page={page} preview={draftMode} />;
   }
-  return <PageView page={page} />;
+  return <CaseStudyListingView page={page} />;
 };
 export default CaseStudyPage;
 export const getStaticProps: GetStaticProps<PageProps> = async ({

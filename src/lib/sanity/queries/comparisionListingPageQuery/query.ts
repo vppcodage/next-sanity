@@ -15,7 +15,7 @@ const groqQuery = groq`*[_type == "comparision_main_page" && defined(slug.curren
   ${header},
   ${footer},
   ${seo},
-  "section":sections[]{
+  "section":section[]{
     (_type == "title_description_side_image_Section")=>{
       ${titleDescriptionSideImageSectionFields}
     },

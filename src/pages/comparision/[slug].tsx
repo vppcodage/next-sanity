@@ -11,7 +11,6 @@ interface ComparisionDetailsPageProps extends SharedPageProps {
   page: ComparisionDetailPageType;
   framework_1: Framework;
   framework_2: Framework;
-  slug : string
 }
 
 interface Query {
@@ -23,7 +22,6 @@ const ComparisionMainPage: NextPage<ComparisionDetailsPageProps> = ({
   framework_1,
   framework_2,
   draftMode,
-  slug
 }) => {
   // if (draftMode) {
   //    return <PreviewComparisionDetailPageView framework_1={framework_1} framework_2={framework_2} page={page} preview={draftMode} />;
@@ -33,7 +31,6 @@ const ComparisionMainPage: NextPage<ComparisionDetailsPageProps> = ({
       framework_1={framework_1}
       framework_2={framework_2}
       page={page}
-      slug={slug}
     />
   );
 };
@@ -119,7 +116,6 @@ export const getServerSideProps: GetServerSideProps<
       token: draftMode ? readToken : "",
       framework_1,
       framework_2,
-      slug : params.slug
     },
   };
 };

@@ -11,7 +11,6 @@ import PreviewCaseStudyDetailPageView from "@/views/PreviewCaseStudyDetailPageVi
 
 interface CaseStudyPageProps extends SharedPageProps {
   page: CaseStudyType;
-  slug:string
 }
 
 interface Query {
@@ -21,12 +20,11 @@ interface Query {
 const CaseStudyDetailPage: NextPage<CaseStudyPageProps> = ({
   page,
   draftMode,
-  slug
 }) => {
   if (draftMode) {
-    return <PreviewCaseStudyDetailPageView page={page} preview={draftMode} slug={slug} />;
+    return <PreviewCaseStudyDetailPageView page={page} preview={draftMode} />;
   }
-  return <CaseStudyDetailPageView page={page} slug={slug}/>;
+  return <CaseStudyDetailPageView page={page} />;
 };
 
 export const getStaticProps: GetStaticProps<CaseStudyPageProps, Query> = async (
@@ -54,7 +52,6 @@ export const getStaticProps: GetStaticProps<CaseStudyPageProps, Query> = async (
       page: pageFilteredData,
       draftMode,
       token: draftMode ? readToken : "",
-      slug : params.slug
     },
   };
 };

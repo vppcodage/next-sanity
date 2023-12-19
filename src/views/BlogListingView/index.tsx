@@ -21,9 +21,9 @@ export default function BlogListingView(props: BlogListingProps) {
       header={page?.header}
       footer={page?.footer}
     >
-      {page?.pageBuilder &&
-        page?.pageBuilder?.map((item, index) => {
-          return <SectionView categories={categories} block={item} key={index} allBlogs={blogs} />;
+      {page?.section &&
+        page?.section?.map((item, index) => {
+          return <Section categories={categories} data={item} key={index} allBlogs={blogs} />;
         })}
     </Layout>
   );

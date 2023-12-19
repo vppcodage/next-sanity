@@ -59,7 +59,7 @@ export interface BlogListing extends SanityDocument {
   footer?: Footer;
   header: Header;
   categories?: Category[]
-  pageBuilder?: PageBuilder[];
+  section: SectionType[];
   allBlogs?: BlogsType[];
 }
 export interface PostCategoriesListing extends SanityDocument {

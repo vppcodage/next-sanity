@@ -24,13 +24,7 @@ export default function PageView(props: PageViewProps) {
         page?.section?.map((item, index) => {
           return (
             <Suspense key={index}>
-              <Section
-                data={item}
-                key={index}
-                // categories={categories}
-                // allBlogs={allBlogs}
-                // {...rest}
-              />
+              <Section data={item}  />
             </Suspense>
           );
         })}
