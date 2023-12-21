@@ -28,7 +28,7 @@ export default {
       type: 'button',
     },
     {
-      name: 'backgroundClassname',
+      name: 'background_classname',
       title: 'Background Classname',
       type: 'string',
       initialValue: 'white',
