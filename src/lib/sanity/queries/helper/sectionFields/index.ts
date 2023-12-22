@@ -483,7 +483,7 @@ custom_rich_text
 },
 project_year,
 slug,
-"heroSectionPreviewImage" : content[_type=="hero_section_case_study_d_page"][0]{
+"heroSectionPreviewImage" : Section[_type=="hero_section_case_study_d_page"][0]{
 _type,
 image[0]{
 ${imageFields}
