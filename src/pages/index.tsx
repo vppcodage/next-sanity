@@ -8,14 +8,14 @@ import { filterSanityDataToSingleItem } from "@/lib/sanity/utils/filterSanityDat
 import PageView from "@/views/PageView";
 import dynamic from "next/dynamic";
 import { SharedPageProps } from "@/lib/sanity/types";
-const PreviewPageView = dynamic(()=>import("@/views/PreviewPageView"))
+const PreviewHomePageView = dynamic(()=>import("@/views/PreviewHomePageView"))
 export interface PageProps extends SharedPageProps {
   page: Page;
 }
 
 const Home: NextPage<PageProps> = ({ page, draftMode }) => {
   if (draftMode) {
-    return <PreviewPageView page={page} preview={draftMode} />;
+    return <PreviewHomePageView page={page} preview={draftMode} />;
   }
   return <PageView page={page} />;
 };
