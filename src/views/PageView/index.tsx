@@ -1,6 +1,5 @@
 import Layout from "@/layouts/Layout";
 import { Page } from "@/lib/sanity/types/page";
-import SectionView from "../../components/common/SectionView";
 import { Suspense } from "react";
 import Section from "@/components/common/Section";
 

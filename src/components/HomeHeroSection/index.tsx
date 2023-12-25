@@ -64,7 +64,7 @@ const Hero: React.FC<HomeheroSectionType> = (sectionProps) => {
           <div className="lg:w-[40%] hidden lg:block">
             {hero_image && (
               <div>
-                <CustomImage block={hero_image} height={500} width={500} />
+                <CustomImage block={hero_image} height={500} width={500} loading="eager" />
               </div>
             )}
           </div>
