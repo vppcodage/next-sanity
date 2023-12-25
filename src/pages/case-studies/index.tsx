@@ -7,9 +7,6 @@ import { caseStudyListingPageQuery } from "@/lib/sanity/queries/caseStudyListing
 import { filterSanityDataToSingleItem } from "@/lib/sanity/utils/filterSanityDataToSingleItem";
 import CaseStudyListingView from "@/views/CaseStudyListingView";
 import { CaseStudyListing } from "@/lib/sanity/types/caseStudy";
-import PageView from "@/views/PageView";
-import { Page } from "@/lib/sanity/types/page";
-import PreviewPageView from "@/views/PreviewPageView";
 
 export interface PageProps extends SharedPageProps {
   page: CaseStudyListing;

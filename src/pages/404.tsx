@@ -1,5 +1,5 @@
 import { GetStaticProps, NextPage } from "next";
-import React, { Fragment } from "react";
+import React from "react";
 import { fetchDataFromSanity, pageQuery, readToken } from "@/lib/sanity";
 import { Page } from "@/lib/sanity/types/page";
 import { filterSanityDataToSingleItem } from "@/lib/sanity/utils/filterSanityDataToSingleItem";

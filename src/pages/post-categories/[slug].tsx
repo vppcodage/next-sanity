@@ -7,7 +7,6 @@ import { fetchDataFromSanity } from "@/lib/sanity";
 import { filterSanityDataToSingleItem } from "@/lib/sanity/utils/filterSanityDataToSingleItem";
 import { PostCategoriesListingPageQuery } from "@/lib/sanity/queries/postCategoriesListingPageQuery";
 import PostCategoriesPageView from "@/views/PostCategoriesListingView";
-import PreviewPostCategoriesPageView from "@/views/PreviewPostCategoriesListing";
 import { AllBlogsData, PostCategoriesListing } from "@/lib/sanity/types/blog";
 import { replace } from "@/lib/replace";
 

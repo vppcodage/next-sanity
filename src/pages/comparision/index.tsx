@@ -7,9 +7,6 @@ import PreviewComparisionListingView from "@/views/PreviewComparisionListingView
 import ComparisionListingView from "@/views/ComparisionListingView";
 import { ComparisionListingType } from "@/lib/sanity/types";
 import { comparisionListingPageQuery } from "@/lib/sanity/queries/comparisionListingPageQuery";
-import { Page } from "@/lib/sanity/types/page";
-import PreviewPageView from "@/views/PreviewPageView";
-import PageView from "@/views/PageView";
 
 export interface PageProps extends SharedPageProps {
   page: ComparisionListingType;

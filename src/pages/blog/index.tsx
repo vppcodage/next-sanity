@@ -2,7 +2,7 @@ import React from "react";
 import { GetStaticProps, NextPage } from "next";
 import { SharedPageProps } from "@/lib/sanity/types";
 import PreviewBlogListingView from "@/views/PreviewBlogListingView";
-import { fetchDataFromSanity, pageQuery, readToken } from "@/lib/sanity";
+import { fetchDataFromSanity, readToken } from "@/lib/sanity";
 import { filterSanityDataToSingleItem } from "@/lib/sanity/utils/filterSanityDataToSingleItem";
 import { blogListingPageQuery } from "@/lib/sanity/queries/blogListingPageQuery";
 import { BlogListing } from "@/lib/sanity/types/blog";
