@@ -29,7 +29,7 @@ import {
   heroSectionPrivacyPolicyFields,
   titleContentArrayFields,
 } from "../helper/sectionFields";
-import { footer, header, pageBuilder, seo } from "../helperQueries";
+import { footer, header, seo } from "../helperQueries";
 import { imageFields } from "../helper/imageFields";
 
 const groqQuery = groq`*[_type == "all_page" && slug.current==$slug]{
