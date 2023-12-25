@@ -29,7 +29,7 @@ const SideContentTitle: React.FC<{
             {sideTitle?.map((item, index) => {
               return (
                 item && (
-                  <li  onClick={() => setCurrId(`postHas_content_${index}`)} className="pt-[0.625em] pb-[0.5em]" key={index}>
+                  <li  onClick={() => setCurrId(`postHas_content_${index+1}`)} className="pt-[0.625em] pb-[0.5em]" key={index}>
                     <span className="text-[16px] font-medium text-[#fff] hover:text-dark-blue align-text-top leading-[24px] font-DM">
                       {item}
                     </span>
